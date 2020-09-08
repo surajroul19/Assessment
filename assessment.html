@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="assessment.js"></script>
+</head>
+<body onload="loadHomePage()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light col-sm-12 col-md-10 offset-md-1">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+            aria-controls="navbarToggler" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" onclick="loadHomePage()">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="loadHomePage()">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="loadHomePage()">Magazine</a>
+                </li>
+            </ul>
+           
+                <div class="form-inline my-2 ml-auto my-lg-0">
+                    <input class="form-control mr-sm-2" list="products" name="product"  id="product" type="search" placeholder="Search">
+                    <datalist id="products">
+                        <option value="chair">
+                        <option value="bed">
+                        <option value="sofa">
+                        <option value="Dine">
+                      </datalist>
+                    <button class="btn btn-outline-info my-2 my-sm-0" onclick="searchProduct()">Search</button>
+                </div>
+           
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" onclick="loadcartPage()"> cart <i>&#xf07a;</i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="loadHomePage()">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-sm-12 col-md-3 offset-md-1">
+            <div id="filters">
+                <p> <strong>Filter by</strong> </p>
+                <div class="col-sm-12 filter">
+                    <label for="collection" onclick="openCollectionFilter()"><strong>Collection</strong> </label>
+                    <div id="collection">
+                        <div class="col-sm-12">
+                            <input class="collection" onclick="filterOnCollection()" type="checkbox" name="collection[]"
+                                value="chair">Chair
+                        </div>
+                        <div class="col-sm-12">
+                            <input class="collection" onclick="filterOnCollection()" type="checkbox" name="collection[]"
+                                value="bed">Bed
+                        </div>
+                        <div class="col-sm-12">
+                            <input class="collection" onclick="filterOnCollection()" type="checkbox" name="collection[]"
+                                value="dine">Dine
+                        </div>
+                        <div class="col-sm-12">
+                            <input class="collection" onclick="filterOnCollection()" type="checkbox" name="collection[]"
+                                value="sofa">Sofa
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 filter">
+                    <label for="color" onclick="openColorFilter()"><strong>Color</strong> </label>
+                    <div id="color">
+                        <div class="col-sm-12">
+                            <input class="color" onclick="filterOnColors()" type="checkbox" name="color[]"
+                                value="black">Black
+                        </div>
+
+                        <div class="col-sm-12">
+                            <input class="color" onclick="filterOnColors()" type="checkbox" name="color[]"
+                                value="yellow">Yellow
+                        </div>
+
+                        <div class="col-sm-12">
+                            <input class="color" onclick="filterOnColors()" type="checkbox" name="color[]"
+                                value="green">Green
+                        </div>
+
+                        <div class="col-sm-12">
+                            <input class="color" onclick="filterOnColors()" type="checkbox" name="color[]"
+                                value="blue">Blue
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 filter">
+                    <label for="color" onclick="openCategoryFilter()"><strong>Category</strong></label>
+                    <div name="category" id="category">
+                        <div class="col-sm-12">
+                            <input class="category" onclick="filterOnCategory()" type="checkbox" name="category[]"
+                                value="chair">Chair
+                        </div>
+                        <div class="col-sm-12">
+                            <input class="category" onclick="filterOnCategory()" type="checkbox" name="category[]"
+                                value="bed">Bed
+                        </div>
+                        <div class="col-sm-12">
+                            <input class="category" onclick="filterOnCategory()" type="checkbox" name="category[]"
+                                value="dine">Dine
+                        </div>
+                        <div class="col-sm-12">
+                            <input class="category" onclick="filterOnCategory()" type="checkbox" name="category[]"
+                                value="sofa">Sofa
+                        </div>
+                    </div>
+                </div>
+                <p><strong>Price Range</strong></p>
+                <input type="range" name="price range" id="priceRange" max="10000" min="0" onchange="filterOnRange()">
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-8">
+            <section id="content" class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
